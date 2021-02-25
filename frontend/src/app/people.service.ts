@@ -44,13 +44,13 @@ export class PeopleService {
 
 
 
-  editPeople(person): Observable<any> {
+  editPeople(updateperson): Observable<any> {
     // console.log(`http://127.0.0.1:5000/api/${person._id}`,
     //   person,
     //   httpOptions);
     return this.http.put(
-      `http://127.0.0.1:5000/api/${person._id}`,
-      person,
+      `http://127.0.0.1:5000/api/${updateperson._id}`,
+      updateperson,
       httpOptions
     );
   }

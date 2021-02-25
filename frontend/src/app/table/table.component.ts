@@ -24,8 +24,6 @@ export class TableComponent implements OnInit {
 
   tableDataSrc: any;
   tableCols: string[] = ['name', 'gender', 'address', 'age', '$$edit', '$$delete'];
-  dataSchema = USER_SCHEMA;
-  // initialising an empty array for data
   personData = [];
 
 
