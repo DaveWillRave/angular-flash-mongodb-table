@@ -12,7 +12,6 @@ import { PersonDataFormComponent} from '../person-data-form/person-data-form.com
 
 export class EditPersonComponent implements OnInit {
   id;
-  name = 'Hi';
 
   constructor(
     private router: Router,

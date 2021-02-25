@@ -1,6 +1,6 @@
 
 <div class="content-box">
-  <form [formGroup]="formG" (ngSubmit)="onButtonClicked(formG)">
+  <form [formGroup]="formG" (ngSubmit)="onButtonClicked(formG.value)">
     <pre></pre>
     <div>
       <mat-label style="padding-left: 55px" >
@@ -16,25 +16,25 @@
       <mat-label for="addressline1">
         Address Line 1:
       </mat-label>
-      <input id="addressline1" name="house" type="text" formControlName="address.addressline1">
+      <input id="addressline1" name="house" type="text" formControlName="addressline1">
       <pre></pre>
       <mat-label>
         Address Line 2:
       </mat-label>
-      <input id="addressline2" name="house" type="text" formControlName="address.addressline2">
+      <input id="addressline2" name="house" type="text" formControlName="addressline2">
       <pre></pre>
       <mat-label style="padding-left: 45px" >
         eircode:
       </mat-label>
-      <input size="7"  id="eircode" name="eircode" type="text" formControlName="address.eircode">
+      <input size="7"  id="eircode" name="eircode" type="text" formControlName="eircode">
       <pre></pre>
       <mat-label style="padding-left: 47px">
         Gender:
       </mat-label>
 
-      <select class="mat-form-field" id="gender" name="gender" formControlName="gender">
-        <option value="602e76beae5170004c8f2550" id="female">Female</option>
-        <option value="602e76b6ae5170004c8f254f" id="male">Male</option>
+      <select class="mat-form-field" id="gender" name="gender" >
+        <option value="602e76beae5170004c8f2550" formControlName="gender">Female</option>
+        <option value="602e76b6ae5170004c8f254f"  formControlName="gender">Male</option>
       </select>
       <pre></pre>
     </div>

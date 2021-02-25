@@ -24,13 +24,13 @@ export class PersonDataFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    console.log(this.id);
+    // console.log(this.id);
 
     this.peopleService.fetchPeopleById(this.id)
       .subscribe( personData  => {
         this.personData  = personData ;
         this.personData  = this.personData[0];
-        console.log(this.personData );
+        console.log(this.personData);
 
 
         this.formG = new FormGroup({
@@ -46,10 +46,23 @@ export class PersonDataFormComponent implements OnInit {
   }
 
   // making a json formatted in the desired manner
-  onButtonClicked(person): void {
-
+  onButtonClicked(): void {
+    console.log(this.personData);
+    const person = {
+      _id: this.personData.id,
+      address: {
+        // _id: this.personData.address.id,
+        addressline1: this.personData.address.addressline1,
+        addressline2: this.personData.address.addressline2,
+        eircode: this.personData.address.eircode,
+      },
+      name: this.personData.name,
+      age: this.personData.age,
+      gender: this.personData.gender
+    };
     console.log(person);
-    }
+    this.onSubmit.emit(person);
+  }
 
 }
 
