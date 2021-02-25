@@ -7,7 +7,7 @@
       <th mat-header-cell *matHeaderCellDef>
         <span *ngIf="col !== '$$edit'">
           <span *ngIf="col !== '$$delete'">
-          {{col}}
+          {{col | titlecase }}
           </span>
         </span>
       </th>

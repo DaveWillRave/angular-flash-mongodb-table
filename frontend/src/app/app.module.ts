@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PeopleService } from './people.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { routing } from './app-routing';
-import { FormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule} from '@angular/material/table';
 import { TableComponent } from './table/table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,7 +15,7 @@ import {  MatButtonModule} from '@angular/material/button';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { EditPersonComponent } from './edit-person/edit-person.component';
-import { PersonDataFormComponent } from './person-data-form/person-data-form.component';
+import { PersonDataFormComponent } from './person-data-form/person-data-form.component';;
 
 
 /*
@@ -44,7 +44,7 @@ import { PersonDataFormComponent } from './person-data-form/person-data-form.com
     routing,
     HttpClientModule,
     MatTableModule,
-    FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatPaginatorModule,
     MatTableModule,

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router} from '@angular/router';
 import { PeopleService } from '../people.service';
-
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-person-data-form',
@@ -10,22 +10,10 @@ import { PeopleService } from '../people.service';
 })
 
 export class PersonDataFormComponent implements OnInit {
-  name = '';
-  age = '';
-  addressline1 = '';
-  addressline2 = '';
-  eircode = '';
-  gender = '';
+  // initialising an empty array for data
+  personData;
   id;
-
-  @Input()  buttonText;
-  @Input() currentName = '';
-  @Input() currentAge = '';
-  // @Input() currentHouse = '';
-  @Input() currentEircode = '';
-  @Input() currentGender = '';
-
-  // tslint:disable-next-line:no-output-on-prefix
+  formG: FormGroup;
   @Output() onSubmit = new EventEmitter<any>();
 
   constructor(
@@ -36,30 +24,33 @@ export class PersonDataFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    // console.log(id);
-    this.name = this.currentName;
-    this.age = this.currentAge;
-    this.eircode = this.currentEircode;
-    this.gender = this.currentGender;
+    console.log(this.id);
+
+    this.peopleService.fetchPeopleById(this.id)
+      .subscribe( personData  => {
+        this.personData  = personData ;
+        this.personData  = this.personData[0];
+        console.log(this.personData );
+
+
+        this.formG = new FormGroup({
+          _id: new FormControl(this.personData.id),
+          name: new FormControl(this.personData.name),
+          gender: new FormControl(this.personData.gender.id),
+          age: new FormControl(this.personData.age),
+          addressline1: new FormControl(this.personData.address.addressline1),
+          addressline2: new FormControl(this.personData.address.addressline2),
+          eircode: new FormControl(this.personData.address.eircode),
+        });
+      });
   }
 
   // making a json formatted in the desired manner
-  onButtonClicked(): void {
-    const person = {
-      _id: this.id,
-      address: {
-        _id: this.id,
-        addressline1: this.addressline1,
-        addressline2: this.addressline2,
-        eircode: this.eircode,
-      },
-      name: this.name,
-      age: this.age,
-      gender: this.gender
-    };
+  onButtonClicked(person): void {
 
-    this.onSubmit.emit(person);
-  }
+    console.log(person);
+    }
+
 }
 
 
