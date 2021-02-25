@@ -1,0 +1,27 @@
+table {
+  width: 70%;
+  height:200px;
+  position:fixed;
+  margin-left: auto; /* half of width */
+  margin-top: auto;  /* half of height */
+  top:90px;
+  left:20%;
+  border-width: 2px;
+  border-style: groove;
+}
+.mat-flat-button{
+  width:1px;
+  background: #ffe2ee;
+}
+
+.wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.add-user {
+  position: absolute;
+  top: 105px;
+  left: 5%;
+}
+

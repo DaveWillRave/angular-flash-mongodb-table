@@ -1,0 +1,43 @@
+
+<div class="content-box">
+  <form (ngSubmit)="onButtonClicked()">
+    <pre></pre>
+    <div>
+      <mat-label style="padding-left: 55px" for="name">
+        Name:
+      </mat-label>
+      <input  id="name" name="name" type="text" [(ngModel)]="name"/>
+      <pre></pre>
+      <mat-label style="padding-left: 68px" for="age">
+        Age:
+      </mat-label>
+      <input size="1" id="age" name="age" type="text" [(ngModel)]="age"/>
+      <pre></pre>
+      <mat-label for="addressline1">
+        Address Line 1:
+      </mat-label>
+      <input id="addressline1" name="house" type="text" [(ngModel)]="addressline1"/>
+      <pre></pre>
+      <mat-label for="addressline2">
+        Address Line 1:
+      </mat-label>
+      <input id="addressline2" name="house" type="text" [(ngModel)]="addressline2"/>
+      <pre></pre>
+      <mat-label style="padding-left: 45px" for="eircode">
+        eircode:
+      </mat-label>
+      <input size="7"  id="eircode" name="eircode" type="text" [(ngModel)]="eircode"/>
+      <pre></pre>
+      <mat-label style="padding-left: 47px"  for="gender">
+        Gender:
+      </mat-label>
+
+      <select class="mat-form-field" id="gender" name="gender" type="text" [(ngModel)]="gender">
+        <option value="602e76beae5170004c8f2550" id="female">Female</option>
+        <option value="602e76b6ae5170004c8f254f" id="male">Male</option>
+      </select>
+      <pre></pre>
+    </div>
+    <button mat-stroked-button color="primary" class="btn" type="submit">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,38 @@
+
+
+  <div class="wrapper">
+<article>
+  <table mat-table [dataSource]="personData">
+    <ng-container matColumnDef="{{col}}" *ngFor="let col of tableCols">
+      <th mat-header-cell *matHeaderCellDef>
+        <span *ngIf="col !== '$$edit'">
+          <span *ngIf="col !== '$$delete'">
+          {{col}}
+          </span>
+        </span>
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <div *ngIf="!element.isEdit">
+          <div class="mat-flat-button" *ngIf="col === '$$edit'" >
+            <a mat-flat-button href="/edit/{{element.id}}">Edit</a>
+          </div>
+          <div class="mat-flat-button"  *ngIf="col === '$$delete'" >
+            <button mat-flat-button (click)="onDeleteClicked(element.id, element.name)">Delete</button>
+          </div>
+          <span #spanHeader>
+            {{element[col]}}
+          </span>
+        </div>
+
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="tableCols"></tr>
+    <tr mat-row *matRowDef="let row; columns: tableCols;"></tr>
+
+  </table>
+</article>
+  </div>
+  <a routerLink="/add">
+  <button class="add-user" mat-stroked-button color="primary">Add User</button>
+  </a>
+

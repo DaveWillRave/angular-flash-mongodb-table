@@ -1,0 +1,73 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+p{
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato';
+}
+
+h1 {
+  font-size: 2em;
+  padding: 10px 0;
+  font-weight: 800;
+}
+
+.header {
+  width: auto;
+  padding:5px 0;
+  text-align: center;
+  background: #00bbfe;
+  color: #ffffff;
+  border-radius: 10px;
+}
+
+.icon {
+  display: inline-block;
+  border: 1px solid white;
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  background-size: contain;
+}
+.icon:hover {
+  background-color: #008ffd;
+  color: #ffffff;
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 15px;
+  transform: scale(1.1);
+  height: auto;
+}
+
+.icon:active {
+  background-color: #008ffd;
+  color: #ffffff;
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 15px;
+  transform: scale(1);
+  height: auto;
+}
+
+.fa-1x {
+  font-size: 1.5rem;
+}
+.navbar-toggler.toggler-example {
+  cursor: pointer;
+}
+.dark-blue-text {
+  color: #0A38F5;
+}
+.dark-pink-text {
+  color: #AC003A;
+}
+.dark-amber-text {
+  color: #ff6f00;
+}
+.dark-teal-text {
+  color: #004d40;
+}

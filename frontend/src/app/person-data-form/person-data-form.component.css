@@ -1,0 +1,11 @@
+.content-box{
+
+  height:200px;
+  position:fixed;
+  margin-left: auto; /* half of width */
+  margin-top: auto;  /* half of height */
+  left:35%;
+
+}
+
+
