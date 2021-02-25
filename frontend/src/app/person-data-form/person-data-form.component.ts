@@ -46,22 +46,22 @@ export class PersonDataFormComponent implements OnInit {
   }
 
   // making a json formatted in the desired manner
-  onButtonClicked(): void {
+  onButtonClicked(person): void {
     console.log(this.personData);
-    const person = {
+    const updateperson = {
       _id: this.personData.id,
       address: {
-        // _id: this.personData.address.id,
-        addressline1: this.personData.address.addressline1,
-        addressline2: this.personData.address.addressline2,
-        eircode: this.personData.address.eircode,
+        _id: this.personData.address.id,
+        addressline1: person.addressline1,
+        addressline2: person.addressline2,
+        eircode: person.eircode,
       },
-      name: this.personData.name,
-      age: this.personData.age,
+      name: person.name,
+      age: person.age,
       gender: this.personData.gender
     };
     console.log(person);
-    this.onSubmit.emit(person);
+    this.onSubmit.emit(updateperson);
   }
 
 }
