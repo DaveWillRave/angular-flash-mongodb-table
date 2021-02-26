@@ -48,6 +48,7 @@ export class PeopleService {
     // console.log(`http://127.0.0.1:5000/api/${person._id}`,
     //   person,
     //   httpOptions);
+    console.log('This is to update person :' + updateperson);
     return this.http.put(
       `http://127.0.0.1:5000/api/${updateperson._id}`,
       updateperson,

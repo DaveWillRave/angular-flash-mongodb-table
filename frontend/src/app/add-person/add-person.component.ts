@@ -13,7 +13,7 @@ export class AddPersonComponent implements OnInit {
   // initialising an empty array for data
   personData;
   id;
-  formG: FormGroup;
+  form: FormGroup;
 
   constructor(
     private router: Router,
@@ -22,7 +22,7 @@ export class AddPersonComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.formG = new FormGroup({
+    this.form = new FormGroup({
           _id: new FormControl(),
           name: new FormControl(),
           gender: new FormControl(),

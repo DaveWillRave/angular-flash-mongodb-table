@@ -5,17 +5,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { PeopleService } from './people.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { routing } from './app-routing';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatTableModule} from '@angular/material/table';
 import { TableComponent } from './table/table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TableLayoutComponent } from './table-layout/table-layout.component';
-import { MatLabel } from '@angular/material/form-field';
+import { AddPersonComponent } from './add-person/add-person.component';
 import {  MatButtonModule} from '@angular/material/button';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { EditPersonComponent } from './edit-person/edit-person.component';
-import { AddPersonComponent} from './add-person/add-person.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
 
 /*
@@ -31,9 +30,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     TableComponent,
     TableLayoutComponent,
-    EditPersonComponent,
-    MatLabel,
-    AddPersonComponent
+    AddPersonComponent,
+    EditPersonComponent
   ],
   /*
   Importing all the directives and pipes needed
@@ -44,12 +42,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     routing,
     HttpClientModule,
     MatTableModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatPaginatorModule,
     MatTableModule,
     MatButtonModule,
-    ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ReactiveFormsModule
   ],
   /*
     For a root module which will let angular know which components will be the
