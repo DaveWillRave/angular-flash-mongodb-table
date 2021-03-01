@@ -1,6 +1,8 @@
 import {OnInit, AfterViewInit, Component, ViewChild} from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { PeopleService} from '../people.service';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 import { Router } from '@angular/router';
 import { MatPaginator } from '@angular/material/paginator';
 

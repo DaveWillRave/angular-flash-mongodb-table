@@ -1,33 +1,45 @@
 
-<div class="content-box">
+<div class="content-box" >
   <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    <pre></pre>
     <div>
-      <mat-label style="padding-left: 55px" >
+      <div *ngIf="form.get('name').hasError('pattern')" class="error">
+        Name has invalid characters </div>
+      <mat-label style="padding-left: 63px" >
         Name:
       </mat-label>
-      <input  id="name" name="name" type="text" formControlName="name" >
+      <input id="name" name="name" type="text" formControlName="name">
       <pre></pre>
-      <mat-label style="padding-left: 68px" >
+      <div *ngIf="form.get('age').errors as ageErrors" class="error">
+        Invalid age, age must be between {{ageErrors.age.min }} and {{ageErrors.age.max }}, please try again.
+      </div>
+      <mat-label style="padding-left: 77px" >
         Age:
       </mat-label>
       <input size="1" id="age" name="age" type="text" formControlName="age">
       <pre></pre>
-      <mat-label for="addressline1">
+      <mat-label  >
         Address Line 1:
       </mat-label>
       <input id="addressline1" name="house" type="text" formControlName="addressline1">
       <pre></pre>
+      <div *ngIf="form.get('addressline2').errors as eirError"  class="error">
+        Address exceeds character limit.
+      </div>
       <mat-label>
         Address Line 2:
       </mat-label>
       <input id="addressline2" name="house" type="text" formControlName="addressline2">
       <pre></pre>
-      <mat-label style="padding-left: 45px" >
+      <div *ngIf="form.get('eircode').errors as eirError"  class="error">
+        Eircode exceeds character limit.
+      </div>
+      <mat-label style="padding-left: 53px" >
         eircode:
       </mat-label>
       <input size="7"  id="eircode" name="eircode" type="text" formControlName="eircode">
       <pre></pre>
-      <mat-label style="padding-left: 47px">
+      <mat-label style="padding-left: 55px">
         Gender:
       </mat-label>
 
@@ -37,9 +49,13 @@
       </select>
       <pre></pre>
     </div>
-    <button mat-stroked-button color="primary" class="btn" type="submit">Submit</button>
+    <div class="submit-box">
+      <button mat-stroked-button color="primary" class="submit-btn" type="submit" [disabled]="!form.valid">Submit</button>
+    </div>
   </form>
 </div>
 
 <div id="demobox">
 </div>
+
+

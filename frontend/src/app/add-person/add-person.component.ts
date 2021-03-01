@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute, Router} from '@angular/router';
 import { PeopleService } from '../people.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import {FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-person',
@@ -22,15 +22,48 @@ export class AddPersonComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
     this.form = new FormGroup({
-          _id: new FormControl(),
-          name: new FormControl(),
-          gender: new FormControl(),
-          age: new FormControl(),
-          addressline1: new FormControl(),
-          addressline2: new FormControl(),
-          eircode: new FormControl(),
+          // id: new FormControl('', Validators.required),
+          name: new FormControl('', Validators.compose([
+            Validators.required,
+            Validators.pattern('[\\w\\-\\s\\/]+'),
+          ])),
+          gender: new FormControl('', Validators.required),
+          age: new FormControl('', Validators.compose([
+            Validators.required,
+            this.agevalid
+          ])),
+          addressline1: new FormControl('', Validators.compose([
+            Validators.required,
+            Validators.maxLength(20),
+          ])),
+          addressline2: new FormControl('', Validators.compose([
+            Validators.maxLength(20),
+            Validators.required,
+          ])),
+          eircode: new FormControl('', Validators.compose([
+            Validators.maxLength(6)
+          ])),
     });
+  }
+
+  // tslint:disable-next-line:typedef
+  agevalid(control: FormControl) {
+    if (control.value.trim().length === 0) {
+      return null;
+    }
+    const age = parseInt(control.value, 10);
+    const minAge = 18;
+    const maxAge = 150;
+    if (age >= minAge && age <= maxAge){
+      return null;
+    } else {
+      return { age: {
+            min: minAge,
+            max: maxAge,
+          }};
+    }
   }
 
   // making a json formatted in the desired manner

@@ -10,8 +10,9 @@ table {
   border-style: groove;
 }
 .mat-flat-button{
-  width:1px;
-  background: #ffe2ee;
+  margin-left: auto;
+  margin-top: auto;
+  background: #f1f1f1;
 }
 
 .wrapper {
@@ -21,7 +22,31 @@ table {
 
 .add-user {
   position: absolute;
-  top: 105px;
-  left: 5%;
+  top: 6px;
+  background-color: #ffffff;
+  left: 13%;
+}
+
+.content-box{
+
+  height:200px;
+  position:fixed;
+  margin-left: auto; /* half of width */
+  margin-top: auto;  /* half of height */
+  left:35%;
+
+}
+
+.green-container{
+  height: 50px;
+  width: 120px;
+  left: 30px;
+  border-radius: 10px;
+  /*right: 200px;*/
+  position:absolute;
+  background-color: #88b3ff;
+  border-width: 2px;
+  border-color: #000000;
+  border-style: solid;
 }
 

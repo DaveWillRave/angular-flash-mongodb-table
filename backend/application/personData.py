@@ -45,7 +45,12 @@ def listaggregate():
 def singleUserAggregate(user_id):
     return list(User.objects.aggregate([
         {
-
+            '$match':
+                {
+                    '_id': ObjectId(f"{user_id}")
+                }
+        },
+        {
             '$lookup':
                 {
                     'from': 'gender',
@@ -67,23 +72,14 @@ def singleUserAggregate(user_id):
                 }
         },
         {
-            '$match':
-                {
-                    '_id': ObjectId(f"{user_id}")
-                }
-        },
-        {
-            '$project':
+             '$project':
                 {
                     '_id': 0,
                     'id': {'$toString': '$_id'},
                     'name': 1,
                     'age': 1,
-                    'gender': '$gender.gender',
-                    'address': {
-                        '$concat': [
-                            '$address.addressline1', ' ', '$address.addressline2', ' ', '$address.eircode'
-                        ]
+                    'gender': {'$toString': '$gender._id'},
+                    'address': { 'id': {'$toString': '$address._id'}, 'addressline1': '$address.addressline1' ,'addressline2': '$address.addressline2', 'eircode': '$address.eircode'
                     }
 
                 }

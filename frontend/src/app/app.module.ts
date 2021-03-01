@@ -15,6 +15,7 @@ import {  MatButtonModule} from '@angular/material/button';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { EditPersonComponent } from './edit-person/edit-person.component';
+import {MatIconModule} from '@angular/material/icon';
 
 
 /*
@@ -37,19 +38,20 @@ import { EditPersonComponent } from './edit-person/edit-person.component';
   Importing all the directives and pipes needed
    */
   // entryComponents:[TableComponent],
-  imports: [
-    BrowserModule,
-    routing,
-    HttpClientModule,
-    MatTableModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatPaginatorModule,
-    MatTableModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule,
+        routing,
+        HttpClientModule,
+        MatTableModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MatPaginatorModule,
+        MatTableModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        ReactiveFormsModule,
+        MatIconModule
+    ],
   /*
     For a root module which will let angular know which components will be the
     starting point for the bootstrap. i.e Entry point for the code.

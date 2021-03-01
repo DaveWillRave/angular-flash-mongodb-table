@@ -24,12 +24,12 @@ class UserAll(Resource):
 class UserId(Resource):
 
     def get(self, user_id):
-        try:
+        # try:
             # user = User.objects(_id=user_id)[0]._id
-            return jsonify(personData.singleUserAggregate(user_id))
+        return jsonify(personData.singleUserAggregate(user_id))
             # return jsonify(User.objects.get(_id=user_id))
-        except Exception as e:
-            return jsonify({'response': 'Sorry this user does not exist'})
+        # except Exception as e:
+        #     return jsonify({'response': 'Sorry this user does not exist'})
     ################
 
     def delete(self, user_id):

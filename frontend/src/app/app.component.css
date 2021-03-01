@@ -1,5 +1,9 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
+html,body{
+  background-color: #daf6f6;
+}
+
 p{
   margin: 0;
   padding: 0;
